@@ -1,0 +1,80 @@
+@import "font-awesome";
+@import "bootstrap-sprockets";
+@import "bootstrap";
+#body{
+	margin : 0px;
+	padding-right:0px;
+	text-align: center;
+	/*padding-top:250px;*/
+	background: asset-url('homepage.jpg');
+	background-size: cover;
+	background-position: center top;
+	background-repeat: no-repeat;
+	color:white;
+	width:100%;
+	height:100%;
+}
+.navbar1 {
+	position: relative;
+	min-height: 20px;
+	border:1px solid transparent;
+	margin-bottom: 0px;
+}
+#back{
+	background: url("homepage.jpg");
+	background-opacity: 0.1;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+#match{
+	margin-left: 500px;
+	margin-right: 500px;
+	border-bottom: solid 1px white;
+}
+h1{
+	font-size: 75px;
+}
+#background{
+	padding-top: 100px;
+	padding-bottom:100px;
+}
+.mylogin{
+	padding-top:300px;
+
+}
+.mylogin1{
+	padding-top:100px;
+	margin-left:250px;
+	margin-right:250px;
+}
+.mysignup{
+	padding-top:100px;
+	padding-bottom:200px;
+}
+.mysignup1{
+	padding-top:20px;
+
+	margin-left:250px;
+	margin-right:250px;
+}
+footer{
+  //margin-top: 140px;
+  //padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+}
+footer a:hover {
+  color: #222;
+}
+footer small {
+  float: left;
+}
+footer ul {
+  float: right;
+  list-style: none;
+}
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
