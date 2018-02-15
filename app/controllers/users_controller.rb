@@ -15,6 +15,23 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+
+  def adminadd
+     @user = User.new
+  end
+  
+  def admincreate
+    @user = User.new(users_params())
+    if (@user.is_admin === nil)
+      @user.is_admin = "false"
+    end
+    
+    if (@user.save)
+      redirect_to users_path
+    else
+      render 'adminadd'
+    end
+  end
   
   def index
     @user = User.all
