@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20180214214549) do
     t.string   "username"
     t.string   "email"
     t.string   "password"
+    t.string   "is_admin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

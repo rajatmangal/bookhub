@@ -1,0 +1,30 @@
+<div class="container">
+  <center>
+<h1> Listing Users </h1>
+
+
+<table>
+  <tr class>
+    <th class="table"> User Id </th>
+    <th class="table"> First Name </th>
+    <th class="table"> Last Name </th>
+    <th class="table"> Username </th>
+    <th class="table"> Email </th>
+  <% @user.each { |element| %>
+  <% if (element.is_admin === "false") %>
+    <tr>
+      <td class="table"> <%= element[:id] %></td>
+      <td class="table"> <%= element[:first_name] %> </td>
+      <td class="table"> <%= element[:last_name] %> </td>
+      <td class="table"> <%= element[:username] %> </td>
+      <td class="table"> <%= element[:email] %> </td>
+    </tr>
+  <% end %>
+    
+  <% } %>
+</table>
+<br>
+<br>
+<%= link_to 'Log Out', logout_path, method: :delete, class: "btn btn-primary btn-sm" %>
+</center>
+</div>

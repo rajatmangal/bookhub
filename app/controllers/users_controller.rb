@@ -5,6 +5,9 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(users_params())
+    if (@user.is_admin === nil)
+      @user.is_admin = "false"
+    end
     
     if (@user.save)
       redirect_to user_path(@user)
@@ -12,6 +15,11 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  
+  def index
+    @user = User.all
+  end
+
   
   def show
     @user = User.find(params[:id])
@@ -21,6 +29,6 @@ class UsersController < ApplicationController
   
   private
     def users_params()
-      params.require(:user).permit(:first_name, :last_name, :username, :email, :password)
+      params.require(:user).permit(:first_name, :last_name, :username, :email, :password, :is_admin)
     end
 end

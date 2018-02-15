@@ -10,6 +10,9 @@
 		<p id="match"></p>
 		<p>
       <%= link_to 'Explore Books', '#', class: "btn btn-primary btn-lg" %>
+      <% if (@user.is_admin === "true") %>
+      	<%= link_to 'Database', users_path, class: "btn btn-primary btn-lg" %>
+      <%end%>
 		</p>
 		<br>
 		<br>
@@ -18,3 +21,4 @@
 </div>
 </div>
 </div>
+<%= render 'layouts/footer' %>
