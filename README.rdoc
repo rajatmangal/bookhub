@@ -1,28 +1,21 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+BookHub: The right book will always keep you company
 
-Things you may want to cover:
+Project Abstract:
+BookHub is a student portal for selling and buying old academic books pertaining to SFU courses. Users can sign up only if they have a valid account linked to SFU student portal. Once the signup process is completed, students can access their account anytime. The portal shall keep the track of all the books purchased and sold by the student. Also, the student shall be able to view the status of all the books he/she has posted for selling. In addition, BookHub shall maintain a database for all its users, available books, Wish Listed books, all the purchases and users associated with each sale and purchase. This shall be of tremendous importance when it comes to security purposes. Overall, the web application is intended to lessen the burden of keeping track of a wide variety of books on the ‘SFU Old Books’ Facebook page and provide students with a simpler and quicker access to their purposes.
 
-* Ruby version
+Current Approach to the Problem:
+Students at SFU do not have an exclusive access to the academic books that they might want to sell or buy (FOR CHEAP!). Most of the students either try to seep in their books through the SFU housing page on Facebook or the ‘SFU Old Books’ page on Facebook. However, this poses several problems to the students. They find it difficult to keep a track of the books that they have posted for selling. The book might get lost in the Facebook pages with a lot of other stuff hovering over it. Every time any student wish to buy a book needs to contact the seller if the book is still available. Also, there is no provision for a student to keep a track of all the books he/she has posted for selling, know the status of those books. Moreover, locating if a certain book is available requires scrolling through tons of books that might not even be related to the student interest.
 
-* System dependencies
+BookHub makes it easier: 
+Firstly, this project would provide the students with an exclusive platform for selling and buying used SFU books. Each student shall have a database to keep a track of all the books that he/she posted for selling and/or has added to the Wishlist. Also, they will be notified if any of the sought books become available at a certain point in time or a student is interested in buying a book posted by another student. Hence, it would reduce the burden of regular check to the posted books and sought books on a Facebook page that is not even an exclusive page for SFU old books. Another great feature of the portal is that students shall be able to search for the books they require based on the name of the book as well as the course name. This will immensely reduce the burden of scrolling through a complete page and check each and every book.
 
-* Configuration
+Target Audience / Customers: 
+BookHub is a website, which would be restricted for serving the purpose of SFU students. Only students, who are linked to SFU with a student account shall be eligible to build an account with BookHub. Nevertheless, based on the initial response to the web application and student demands, this can be expanded to include students from other universities as well. However, BookHub shall not be expanded to non-student accesses since it could pollute the otherwise academic student portal. Hence, BookHub shall be limited only to academic books. Nonetheless, there might be a consideration to provide some remote access to verified old book sellers so that they can post SFU course books that might of interest to several students.
 
-* Database creation
+Scope of the Project:
+BookHub shall incorporate several features to serve the needs of SFU students. There would be a sign up for unverified users to verify their account. Once verified each user would be able to manage his/her profile through sign in. There would be a search column where a user could search for the required books. The user could search a book by specifying various details. For instance, the user could search for a book using the name of the book, ISBN of the book or even the name of the course that requires that particular book. There would be a column where a user could post a book to be sold along with all the relevant details such as pictures, condition of the book, price etc. In case a book is not available in the BookHub, then the student could add the book in the Wish List. If the book becomes available at certain point of time in future, all the students who have added that particular book in the Wish List shall be notified with an email. There might be a consideration to allow some remote access to verified old book sellers (only for SFU course books) so that they can post books on the portal that might serve the requirements of several SFU students.
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Competitive Analysis:
+Currently, most of the students choose SFU Old books page on Facebook to advertise the books they want to sell or look for books they want to buy. Our web application, in a way, can be said to be a competition to the Old Books page on Facebook. However, more than a competition, BookHub is an attempt to simplify the user experience while selling or buying an academic book. The major focus is to serve the requirements of the students by providing them the best possible simplified approach to books and condense their stress in from highly work intensive schedule.
