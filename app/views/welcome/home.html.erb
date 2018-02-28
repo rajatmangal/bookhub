@@ -5,11 +5,22 @@
 </div>
 	<div class="container">
 	<div id="background">
-		<h1>BookHub</h1>
-		<h3>The right book will always keep you company</h3>
+		<% if (logged_in?) %>
+			<h1>Welcome to BookHub</h1>
+		<% else %>
+			<h1>BookHub</h1>
+			<h3>The right book will always keep you company</h3>
+		<% end %>
 		<p id="match"></p>
 		<p>
+		<% if (logged_in?) %>
+			<%= link_to 'Explore Books', '#', class: "btn btn-primary btn-lg" %>
+      <% if (current_user.is_admin === "true") %>
+      	<%= link_to 'Database', users_path, class: "btn btn-primary btn-lg" %>
+      <%end%>
+		<%else%>
       <%= link_to 'Shop Now!', signup_path, class: "btn btn-primary btn-lg" %>
+    <%end%>
 		</p>
 		<br>
 		<br>

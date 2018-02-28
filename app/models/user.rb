@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :books
+  
   before_save {self.email = email.downcase } # This sets all the emails entered into lower case
   validates :username, presence: true, 
             length: {minimum: 3, maximum: 25}, 

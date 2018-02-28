@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/signup/admin', to: 'users#adminadd'
   post '/signup/admin', to: 'users#createadmin'
+  
+  resources :books
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

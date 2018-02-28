@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
   
   def create
     user = User.find_by(email: params[:session][:email].downcase)
-    if (user && (params[:session][:password] == user.password))
+    if (user && user.authenticate(params[:session][:password]))
       session[:user_id] = user.id
-      redirect_to user_path(user)
+      redirect_to root_path
     else
       flash.now[:danger] = "Something went wrong with your credentials!"
       render 'new'
@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    session[:userid] = nil
+    session[:user_id] = nil
     flash[:success] = "You have successfully logged out of your account"
     redirect_to root_path
   end

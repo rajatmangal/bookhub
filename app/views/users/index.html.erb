@@ -10,6 +10,7 @@
     <th class="table"> Last Name </th>
     <th class="table"> Username </th>
     <th class="table"> Email </th>
+    <th class="table"> Delete the User </th>
   <% @user.each { |element| %>
   <% if (element.is_admin === "false") %>
     <tr>
@@ -18,6 +19,7 @@
       <td class="table"> <%= element[:last_name] %> </td>
       <td class="table"> <%= element[:username] %> </td>
       <td class="table"> <%= element[:email] %> </td>
+      <td class="table"> <%= link_to "Delete", user_path(element), method: :delete %></td>
     </tr>
   <% end %>
     
@@ -25,6 +27,7 @@
 </table>
 <br>
 <br>
+<%= link_to 'Home Page', root_path , class: "btn btn-primary btn-sm" %>
 <%= link_to 'Log Out', logout_path, method: :delete, class: "btn btn-primary btn-sm" %>
 </center>
 </div>

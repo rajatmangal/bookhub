@@ -1,0 +1,29 @@
+<%= render 'layouts/navigation' %>
+<br>
+<div class="container">
+  <% @book.each { |element| %>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+         <center> <h3 class="panel-title">Book Information - Posted By <%= element.user.username %> </h3></center>
+        </div>
+      <div class="panel-body">
+        <center>
+          Title: - <%= element[:name] %> <br>
+          ISBN Number: - <%= element[:ISBN] %> <br>
+          Author: - <%= element[:author] %> <br>
+          <% if logged_in? %>
+            <% if (element.user == current_user || current_user.is_admin == "true") %>
+              <%= link_to "Edit Book", edit_book_path(element), class: "btn btn-primary btn-sm"%>
+              <%= link_to "Delete Book", book_path(element), method: "delete" , class: "btn btn-primary btn-sm"%>
+            <% end %>
+          <% end %>
+        </center>
+      </div>
+    </div>
+  <% } %>
+</div>
+<br>
+<br>
+<br>
+</nr>
+<%= render 'layouts/footer' %>
