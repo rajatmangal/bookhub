@@ -4,12 +4,25 @@
   <%= render 'layouts/messages' %>
 </div>
 <% if (@book.errors.any?) %>
-<h2> The following errors prevented you from signing up </h2>
-<ul>
-  <% @book.errors.full_messages.each do |msg|  %>
-  <li> <%= msg %> </li>
-  <% end %>
-</ul>
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-2">
+			<div class="panel panel-danger">
+				<div class="panel-heading">
+					<h2 class="panel-title">
+						<%= pluralize(@book.errors.count, "error") %>
+						prevented you from editing the information of the book
+					</h2>
+					<div class="panel-body">
+						<ul>
+							<% @book.errors.full_messages.each do |msg|  %>
+ 						  <li> <%= msg %> </li>
+  						 <% end %>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 <% end %>
 
 
