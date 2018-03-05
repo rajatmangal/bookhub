@@ -11,7 +11,12 @@
       </div>
     <div class="panel-body">
       <center>
-			<%= image_tag @user.image.url(:thumb),class:"img-circle"%><br>
+			<% if @user.image_file_name != nil%>
+				<%= image_tag @user.image.url(:thumb),class:"img-circle"%><br>
+			<%else%>
+				<%= image_tag "profile.jpg",class:"img-circle image" %><br>
+<!-- 				<img class="img-circle" asset-src="homepage.jpg"> -->
+			<%end%>
       First Name: - <%= @user.first_name %> <br>
       Last name: - <%= @user.last_name %> <br>
       Username: - <%= @user.username %> <br>
