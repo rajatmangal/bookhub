@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180305033106) do
+ActiveRecord::Schema.define(version: 20180305035420) do
 
   create_table "books", force: :cascade do |t|
     t.string   "name"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20180305033106) do
     t.string   "author"
     t.integer  "user_id"
     t.text     "description"
-    t.string   "price"
+    t.decimal  "price"
     t.datetime "availability"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -34,10 +34,6 @@ ActiveRecord::Schema.define(version: 20180305033106) do
     t.string   "is_admin"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
