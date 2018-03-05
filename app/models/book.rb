@@ -9,4 +9,11 @@ class Book < ActiveRecord::Base
   validates :price, presence: true
   validates :availability, presence: true
   
+  def self.search(search)
+    where("name LIKE ?", "%#{search}%") 
+    where("ISBN LIKE ?", "%#{search}%")
+    where("description LIKE ?", "%#{search}%")
+    where("author LIKE ?", "%#{search}%")
+  end
+  
 end
