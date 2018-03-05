@@ -11,6 +11,7 @@
       </div>
     <div class="panel-body">
       <center>
+			<%= image_tag @user.image.url(:thumb),class:"img-circle"%><br>
       First Name: - <%= @user.first_name %> <br>
       Last name: - <%= @user.last_name %> <br>
       Username: - <%= @user.username %> <br>
