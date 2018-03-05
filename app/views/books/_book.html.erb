@@ -10,6 +10,9 @@
           Title: - <%= element[:name] %> <br>
           ISBN Number: - <%= element[:ISBN] %> <br>
           Author: - <%= element[:author] %> <br>
+          Price: - <%= element[:price] %> <br>
+          Availability: - <%= element[:availability] %> <br>
+          Decription: - <%= element[:description] %> <br>
           <% if logged_in? %>
             <% if (element.user == current_user || current_user.is_admin == "true") %>
               <%= link_to "Edit Book", edit_book_path(element), class: "btn btn-primary btn-sm"%>
