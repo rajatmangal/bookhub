@@ -28,9 +28,9 @@
 </div>
 </div>
 <%else%>
-	<h1 align="center">
-		Welcome <%= current_user.first_name%>
-</h1>
+	<h3 align="center">
+		<%= current_user.first_name + " " + current_user.last_name%>
+</h3>
 <div align="center">
 	<% if current_user.image_file_name != nil%>
 		<%= image_tag current_user.image.url(:large),class:"img-circle"%><br>
@@ -42,5 +42,6 @@
 	Books posted by you: -
 </h2>
 <p id="match1"></p>
+<%= render "book",obj: current_user.books %>
 <%end%>
 <%= render 'layouts/footer' %>
