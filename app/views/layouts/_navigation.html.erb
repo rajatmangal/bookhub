@@ -25,7 +25,11 @@
 							</form>
       				<% if logged_in?() %>
       					<li class="dropdown">
+<<<<<<< HEAD
+          				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%="Welcome " +current_user.first_name + " " + current_user.last_name%><span class="caret"></span></a>
+=======
           				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <%='Welcome ' + current_user.first_name + " " + current_user.last_name%><span class="caret"></span></a>
+>>>>>>> a3e27c415d7eb4cebdfa871bec0dda34ec7c261b
           				<ul class="dropdown-menu">
            					<li><%= link_to "List Books", books_path %></li>
             				<li><%= link_to "Add a new Book", new_book_path %></li>
