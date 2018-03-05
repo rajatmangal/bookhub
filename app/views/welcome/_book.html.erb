@@ -1,6 +1,5 @@
 <div class="container">
   <% obj.each { |element| %>
-  <% if element.user != current_user%>
     <div class="panel panel-info">
         <div class="panel-heading">
          <center> <h3 class="panel-title">Book Information - Posted By <%= element.user.username %> </h3></center>
@@ -19,6 +18,5 @@
         </center>
       </div>
     </div>
-  <%end%>
   <% } %>
 </div>
