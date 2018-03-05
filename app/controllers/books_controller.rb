@@ -9,9 +9,13 @@ class BooksController < ApplicationController
   
   def edit
     @book = Book.find(params[:id])
-    if !logged_in? || @book.user != current_user
-      flash[:danger] = "Sorry, you are not allowed this opearation"
-      redirect_to books_path
+    if (!logged_in?)
+      if (@book.user != is_admin)
+        if (@book.user != current_user)
+          flash[:danger] = "Sorry, you are not allowed this opearation"
+          redirect_to books_path
+        end
+      end
     end
   end
   
