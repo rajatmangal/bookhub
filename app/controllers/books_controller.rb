@@ -63,6 +63,9 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
   
+  def search
+  end
+  
   
   private
     def book_params()

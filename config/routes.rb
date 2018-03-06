@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post '/signup/admin', to: 'users#createadmin'
   
   resources :books
+  get '/booksearch', to: 'books#search'
   
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
