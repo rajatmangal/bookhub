@@ -16,7 +16,10 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/signup/admin', to: 'users#adminadd'
   post '/signup/admin', to: 'users#createadmin'
-  get '/wishlist', to: 'wish_lists#new'
+  get '/add_to_wishlist', to: 'wish_lists#new'
+  get '/show_wishlist', to: 'wish_lists#show'
+  delete '/delete_wishlist', to: 'wish_lists#destroy'
+  
   
   resources :books
   get '/booksearch', to: 'books#search'
