@@ -5,6 +5,11 @@ class WishListsController < ApplicationController
   # GET /wish_lists.json
   def index
     @wish_list = WishList.all
+    if params[:search]
+      @wish_list = WishList.search(params[:search])
+    else
+      @wish_list = WishList.all
+    end
   end
   
   # GET /wish_lists/1
@@ -39,7 +44,13 @@ class WishListsController < ApplicationController
   # POST /wish_lists.json
   def create
     @wish_list = WishList.new(wish_list_params)
-
+    @wish_list.save
+   #  if (@wish_list.save)    # If validations are successfull
+    #  flash[:success] = "Wish_list was successfully added"
+     # redirect_to wish_list(@wish_list) ## @book is passed in because book_path (show fn) needs the id (can see in rake routes)
+  #  else
+   #   render 'new'
+  #  end
     respond_to do |format|
       if @wish_list.save
         format.html { redirect_to @wish_list, notice: 'Wish list was successfully created.' }
@@ -83,6 +94,6 @@ class WishListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wish_list_params
-      params.require(:wish_list).permit(:name, :ISBN, :price, :stock)
+      params.require(:wish_list).permit(:name, :ISBN, :price)
     end
-end
+  end
