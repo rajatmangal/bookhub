@@ -10,7 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  
+<div class="container">
+ <div class="panel-body">
+  <center>
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -23,11 +26,15 @@
     <%= f.label :price %><br>
     <%= f.text_field :price %>
   </div>
-  <div class="field">
-    <%= f.label :stock %><br>
-    <%= f.text_field :stock %>
+  </center>
   </div>
   <div class="actions">
+    <center>
     <%= f.submit %>
   </div>
 <% end %>
+</div>
+
+
+
+
