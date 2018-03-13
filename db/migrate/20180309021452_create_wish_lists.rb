@@ -4,9 +4,6 @@ class CreateWishLists < ActiveRecord::Migration
       t.string :name
       t.string :ISBN
       t.float :price
-      t.decimal :stock
-
-      t.timestamps null: false
     end
   end
 end
