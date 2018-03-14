@@ -36,16 +36,8 @@
            					<li><%= link_to "List Books", books_path %></li>
             				<li><%= link_to "Add a new Book", new_book_path %></li>
 										<li role="separator" class="divider"></li>
-<<<<<<< HEAD
-            				<li><%= link_to "Wishlist", new_wish_list_path %></li>
-            				<li><%= link_to "Add to wishlist", new_wish_list_path %></li
-										<li><%= link_to "Add a new book to wishlist", add_to_wishlist_path %></li>
-            				<li><%= link_to "Browse your Wishlist", show_wishlist_path %></li>
-
-=======
-							<li><%= link_to "Add a new book to wishlist", add_to_wishlist_path %></li>
+							<li><%= link_to "Add a new book to wishlist", new_wish_list_path %></li>
             				<li><%= link_to "Browse your Wishlist", wish_lists_path %></li>
->>>>>>> b21322db82ce874d0d016640a2f0d1686dc1eddd
             				<li role="separator" class="divider"></li>
             				<li><%= link_to "Profile", user_path(current_user) %></li>
             				<% if current_user.is_admin == "true" %>
