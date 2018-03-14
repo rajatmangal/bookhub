@@ -12,6 +12,11 @@
       </div>
     <div class="panel-body">
       <center>
+        <% if @book.image_file_name != nil%>
+	      	<%= image_tag @book.image.url(:large),class:"img-thumbnail image2"%><br>
+	      <%else%>
+		      <%= image_tag "preview.jpg",class:"img-thumbnail image2" %><br>
+	      <%end%>
       Title: - <%= @book.name %> <br>
       ISBN Number: - <%= @book.ISBN %> <br>
       Author: - <%= @book.author %> <br>

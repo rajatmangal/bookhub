@@ -6,15 +6,22 @@
         </div>
       <div class="panel-body">
         <center>
+          
+          <% if element.image_file_name != nil%>
+	      	  <%= image_tag element.image.url(:large),class:"img-thumbnail image3"%><br>
+	        <%else%>
+		        <%= image_tag "preview.jpg",class:"img-thumbnail image3" %><br>
+	        <%end%>
           Title: - <%= element[:name] %> <br>
           ISBN Number: - <%= element[:ISBN] %> <br>
-          Author: - <%= element[:author] %> <br>
-          Price: - <%= element[:price] %> <br>
-          Availability: - <%= element[:availability] %> <br>
-          Decription: - <%= element[:description] %> <br>
+          <!--Author: - <%= element[:author] %> <br>-->
+          <!--Price: - <%= element[:price] %> <br>-->
+          <!--Availability: - <%= element[:availability] %> <br>-->
+          <!--Decription: - <%= element[:description] %> <br>-->
           <% if logged_in? %>
             <% if (element.user == current_user || current_user.is_admin == "true") %>
               <%= link_to "Edit Book", edit_book_path(element), class: "btn btn-primary btn-sm"%>
+              <%= link_to "Show Book", book_path(element), class: "btn btn-primary btn-sm"%>
               <%= link_to "Delete Book", book_path(element), method: "delete" , class: "btn btn-primary btn-sm"%>
             <% end %>
           <% end %>
