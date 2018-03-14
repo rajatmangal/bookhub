@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :books
+  has_many :wish_lists
   has_attached_file :image, styles: { large: "600x600>", medium: "300x300>",thumb: "150x150#" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   before_save {self.email = email.downcase } # This sets all the emails entered into lower case
