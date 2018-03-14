@@ -15,7 +15,7 @@ class WishListsController < ApplicationController
   # GET /wish_lists/1
   # GET /wish_lists/1.json
   def show
-     @wish_list = WishList.find(params[:id])
+     @wish_list = WishList.find_by_id(params[:id])
   end
 
   # GET /wish_lists/new
@@ -89,7 +89,7 @@ class WishListsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_wish_list
-      @wish_list = WishList.find(params[:id])
+      @wish_list = WishList.find_by_id(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
