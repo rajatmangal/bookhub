@@ -45,12 +45,13 @@ class WishListsController < ApplicationController
   def create
     @wish_list = WishList.new(wish_list_params)
     @wish_list.save
-   #  if (@wish_list.save)    # If validations are successfull
-    #  flash[:success] = "Wish_list was successfully added"
-     # redirect_to wish_list(@wish_list) ## @book is passed in because book_path (show fn) needs the id (can see in rake routes)
-  #  else
-   #   render 'new'
-  #  end
+    # if (@wish_list.save)    # If validations are successfull
+    #   flash[:success] = "Wish_list was successfully added"
+    #   redirect_to wish_list(@wish_list) ## @book is passed in because book_path (show fn) needs the id (can see in rake routes)
+    # else
+    #   render 'new'
+    # end
+    
     respond_to do |format|
       if @wish_list.save
         format.html { redirect_to @wish_list, notice: 'Wish list was successfully created.' }
@@ -96,4 +97,4 @@ class WishListsController < ApplicationController
     def wish_list_params
       params.require(:wish_list).permit(:name, :ISBN, :price)
     end
-  end
+end
