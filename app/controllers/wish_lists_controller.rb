@@ -4,11 +4,11 @@ class WishListsController < ApplicationController
   # GET /wish_lists
   # GET /wish_lists.json
   def index
-    @wish_list = WishList.all
+    @wish_list = current_user.wish_lists
     if params[:search]
       @wish_list = WishList.search(params[:search])
     else
-      @wish_list = WishList.all
+      @wish_list = current_user.wish_lists
     end
   end
   
@@ -44,6 +44,7 @@ class WishListsController < ApplicationController
   # POST /wish_lists.json
   def create
     @wish_list = WishList.new(wish_list_params)
+    @wish_list.user = current_user
     @wish_list.save
     # if (@wish_list.save)    # If validations are successfull
     #   flash[:success] = "Wish_list was successfully added"

@@ -13,7 +13,7 @@
       <center>
       Title: - <%= @wish_list.name %> <br>
       ISBN Number: - <%= @wish_list.ISBN %> <br>
-			Price: - <%= @wish_list.price %> <br>
+	  Price: - <%= @wish_list.price %> <br>
       </center>
     </div>
 </div>
@@ -21,7 +21,7 @@
 		<p>
 		  <center>
       <%= link_to 'Edit WishList', edit_wish_list_path, class: "btn btn-primary btn-sm" %>
-      <%= link_to 'Back', root_path, class: "btn btn-primary btn-sm" %>
+      <%= link_to 'Back', add_to_wishlist_path, class: "btn btn-primary btn-sm" %>
       </center>
 		</p>
 		<br>
