@@ -1,6 +1,77 @@
-<h1>Editing Wish List</h1>
+<%= render 'layouts/navigation' %>
+  <%= form_for(@wish_list) do |f| %>
+    <% if @wish_list.errors.any? %>
+      <div class="row">
+		    <div class="col-xs-8 col-xs-offset-2">
+			    <div class="panel panel-danger">
+				    <div class="panel-heading">
+					    <h2 class="panel-title">
+              <h2><%= pluralize(@wish_list.errors.count, "error") %> prohibited this wish_list from being saved:</h2>
+                <div class="panel-body">
+                  <ul>
+                      <% @wish_list.errors.full_messages.each do |message| %>
+                      <li><%= message %></li>
+                      <% end %>
+                  </ul>
+                </div>
+             </div>
+		    	</div>
+		    </div>
+	    </div>
+<% end %>
 
-<%= render 'form' %>
 
-<%= link_to 'Show', @wish_list %> |
-<%= link_to 'Back', wish_lists_path([:id]) %>
+
+
+
+<div class="mylogin1">
+  <div class="panel panel-default">
+  	<div class="panel-heading">
+    	<h3 class="panel-title">Edit Book in the wishlist</h3>
+  	</div>
+  	<div class="panel-body">
+          <div class="form-group">
+						<div class="control-label col-sm-2">
+	            <%= f.label :Book_Name %>
+						</div>
+            <div class="col-sm-10">
+               <%= f.text_field :name, class: "form-control", id: "inputText3", placeholder: "Title of the Book", autofocus: true %>
+            </div>
+          </div>
+			<br><br><br>
+          <div class="form-group">
+						<div class="control-label col-sm-2">
+            	<%= f.label :ISBN_Number, "ISBN No." %>
+						</div>
+             <div class="col-sm-10">
+                <%= f.text_field :ISBN, class: "form-control", id: "inputText3", placeholder: "ISBN Number of the book", autofocus: true %>
+           </div>
+          </div>
+			<br><br><br>
+          <div class="form-group">
+						<div class="control-label col-sm-2">
+	            <%= f.label :Price %>
+						</div>
+             <div class="col-sm-10">
+                <%= f.number_field :price, class: "form-control", id: "inputText3", placeholder: "Price in CAD", autofocus: true %>
+           </div>
+          </div>
+			<br><br><br>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <%= f.submit "Save changes!", class: 'btn btn-default' %>
+            </div>
+          </div>	
+    </div>
+  		<div class="panel-footer">
+  			Want to go Back, Changes will not be saved<br><br>
+  			<%= link_to "Back", wish_lists_path , class: 'btn btn-primary btn-sm' %>
+  		</div>
+	</div>
+</div>
+<br>
+<br>
+<br>   
+<% end %>
+<%= render 'layouts/footer' %>
+
