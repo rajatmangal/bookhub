@@ -1,11 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BookHub</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class = "body">
 <%= render 'layouts/navigation' %>
-<% if (!logged_in?)%>
 <div id ="body">
 	<div id="error">
   <%= render 'layouts/messages' %>
 </div>
 	<div class="container">
 	<div id="background">
+		<br><br><br>
 		<% if (logged_in?) %>
 			<h1>Welcome to BookHub</h1>
 		<% else %>
@@ -27,21 +36,6 @@
 </div>
 </div>
 </div>
-<%else%>
-	<h3 align="center">
-		<%= current_user.first_name + " " + current_user.last_name%>
-</h3>
-<div align="center">
-	<% if current_user.image_file_name != nil%>
-		<%= image_tag current_user.image.url(:large),class:"img-circle"%><br>
-	<%else%>
-		<%= image_tag "profile.jpg",class:"img-circle image1" %><br>
-	<%end%>
-</div>
-<h2 align="center">
-	Books posted by you: -
-</h2>
-<p id="match1"></p>
-<%= render "book",obj: current_user.books %>
-<%end%>
+	</body>
+</html>
 <%= render 'layouts/footer' %>

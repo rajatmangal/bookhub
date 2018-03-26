@@ -1,0 +1,17 @@
+<%= render 'layouts/navigation' %>
+<h3 align="center">
+		<%= current_user.first_name + " " + current_user.last_name%>
+</h3>
+<div align="center">
+	<% if current_user.image_file_name != nil%>
+		<%= image_tag current_user.image.url(:large),class:"img-circle"%><br>
+	<%else%>
+		<%= image_tag "profile.jpg",class:"img-circle image1" %><br>
+	<%end%>
+</div>
+<h2 align="center">
+	Books posted by you: -
+</h2>
+<p id="match1"></p>
+<%= render "book",obj: current_user.books %>
+<%= render 'layouts/footer' %>
