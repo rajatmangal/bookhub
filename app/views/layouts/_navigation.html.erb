@@ -12,7 +12,11 @@
     		</div>
     		<div class="collapse navbar-collapse" id="bs-nav-demo">
       			<ul class="nav navbar-nav">
-      				<li><a href="#"> <%=fa_icon "book"%> Books <span class="sr-only">(current)</span></a></li>
+							<li>
+								<%= link_to books_path do %>
+   							  <%=fa_icon "book"%>Books
+								<% end %>
+							</li>
       				<li><a href="#">About <span class="sr-only">(current)</span></a></li>
       				<li><a href="#">Contact <span class="sr-only">(current)</span></a></li>
 							<li><%= link_to "Search", books_path %></li></li>

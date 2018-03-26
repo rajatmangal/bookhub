@@ -27,7 +27,7 @@
 
 
 
-
+<br><br><br>
 <%= form_for @user, :html => {class: "form-horizontal", role: "form"} do |f| %>
 <div class="mysignup1">
 	<div class="panel panel-default">
@@ -96,27 +96,6 @@
       	<!--<input type="password" class="form-control" id="inputPassword3" placeholder="Password">-->
     </div>
   </div>
- <!--  <div class="form-group">
-      <label for="inputPassword3" class="col-sm-2 control-label">Confirm Password</label>
-      <div class="col-sm-10">
-        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-    </div>
-  </div> -->
-  <!-- <div class="form-group">
-        <label for="inputText3" class="col-sm-2 control-label">Contact</label>
-          <div class="col-sm-10">
-              <input type="text" class="form-control" id="inputText3" placeholder="Contact Number">
-          </div>
-      </div> -->
-  <!-- <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox"> Remember me
-        </label>
-      </div>
-    </div>
-  </div> -->
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <%= f.submit "Update", class: 'btn btn-default' %>
@@ -124,16 +103,16 @@
     </div>
   </div>
 <%end%>
-  		</div>
-  		<div class="panel-footer">
+				<div class="panel-footer">
   			Don't Want any changes!<br><br>
   			<%= link_to "Go Back", root_path , class: 'btn btn-primary btn-sm' %>
   			<!--<a href="login.html"><button type="button" class="btn btn-primary btn-sm">SignIn Now</button></a>-->
   		</div>
+  		</div>
+  		
 
 	</div>
 </div>
 </div>
-<%= render 'layouts/footer' %>
 
 
