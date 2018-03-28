@@ -1,4 +1,4 @@
-class WishListsController < ApplicationController
+class WishListsController < BooksController
   before_action :set_wish_list, only: [:show, :edit, :update, :destroy]
 
   # GET /wish_lists
@@ -38,6 +38,11 @@ class WishListsController < ApplicationController
         end
       end
     end
+  end
+  
+  def check_availability
+    @book = Book.all
+    @wish_list = current_user.wish_lists
   end
 
   # POST /wish_lists

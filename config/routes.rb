@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   post '/signup/admin', to: 'users#createadmin'
   
   get '/profile', to: 'users#profile'
-  
+  get '/availability', to: 'wish_lists#check_availability'
   
   resources :books
   get '/booksearch', to: 'books#search'
