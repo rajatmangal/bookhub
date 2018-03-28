@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
- default from: '13701917022@163.com'
+ default from: 'bookhubservice<13701917022@163.com>'
  
   def welcome_email(user,wishlist)
     @user = user

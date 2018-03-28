@@ -86,7 +86,9 @@ Rails.application.configure do
         :port => 25,  
         :domain => "163.net", 
         :authentication => :login,   
-        :user_name => "xxx",  
-        :password => "password"
+        :user_name => "bookhub",  
+        :password => "ijkSS21"
+        :openssl_verify_mode => 'none',
+        :ssl => true
   }
 end
