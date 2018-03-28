@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/signup/admin', to: 'users#adminadd'
   post '/signup/admin', to: 'users#createadmin'
-  
   get '/profile', to: 'users#profile'
   
   
