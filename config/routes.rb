@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   
   root 'welcome#home'
+  get '/about', to: 'welcome#about'
+  get '/contact', to: 'welcome#contact'
+  
+  get '/contactSeller', to: 'users#buyNow'
+  
   get '/signup', to: 'users#new'
   
   resources :users, except: [:new]

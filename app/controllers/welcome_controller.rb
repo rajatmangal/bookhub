@@ -4,4 +4,10 @@ class WelcomeController < ApplicationController
       redirect_to profile_path
     end
   end
+  
+  def about
+  end
+  
+  def contact
+  end
 end
