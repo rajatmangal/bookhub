@@ -58,6 +58,7 @@ class WishListsController < BooksController
     #   render 'new'
     # end
     
+    UserMailer.welcome_email(@wish_list.user, @wish_list).deliver_now
     respond_to do |format|
       if @wish_list.save
         format.html { redirect_to @wish_list, notice: 'Wish list was successfully created.' }
