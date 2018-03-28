@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180314025321) do
+ActiveRecord::Schema.define(version: 20180328011902) do
 
   create_table "books", force: :cascade do |t|
     t.string   "name"
@@ -45,10 +45,12 @@ ActiveRecord::Schema.define(version: 20180314025321) do
   end
 
   create_table "wish_lists", force: :cascade do |t|
-    t.string  "name"
-    t.string  "ISBN"
-    t.float   "price"
-    t.integer "user_id"
+    t.string   "name"
+    t.string   "ISBN"
+    t.float    "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
 end
