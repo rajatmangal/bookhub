@@ -1,0 +1,30 @@
+<div class="container">
+  <% obj.each do |element| %>
+  <% if element.user == current_user%>
+    <div class="panel panel-info">
+        <div class="panel-heading">
+         <center> <h3 class="panel-title">Book Information </h3></center>
+        </div>
+      <div class="panel-body">
+        <center>
+	        Title: - <%= element[:name] %> <br>
+          ISBN Number: - <%= element[:ISBN] %> <br>
+					Price: - $<%= element[:price] %>
+					<br>
+          <% if logged_in? %>
+            <% if (element.user == current_user || current_user.is_admin == "true") %>
+							<%= link_to "Show Book", wish_list_path(element), class: "btn btn-primary btn-sm"%>
+              <%= link_to "Edit Book", edit_wish_list_path(element), class: "btn btn-primary btn-sm"%>
+              <%= link_to "Delete Book", wish_list_path(element), method: "delete" , class: "btn btn-primary btn-sm"%>
+            <% end %>
+          <% end %>
+        </center>
+			</div>
+    </div>
+		
+  <%end%>
+	<%end%>
+</div>
+
+
+
