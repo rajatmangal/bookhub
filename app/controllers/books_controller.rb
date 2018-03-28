@@ -1,4 +1,7 @@
+
+
 class BooksController < ApplicationController
+  #include 'bookland'
   def new
     if (!logged_in?)
       flash[:danger] = "Please login or signup to access this feature"
@@ -22,7 +25,6 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params());
     @book.user = current_user
-    
     if (@book.save)    # If validations are successfull
       flash[:success] = "Book was successfully added"
       redirect_to book_path(@book) ## @book is passed in because book_path (show fn) needs the id (can see in rake routes)
@@ -65,6 +67,8 @@ class BooksController < ApplicationController
   
   def search
   end
+ 
+  
   
   
   private

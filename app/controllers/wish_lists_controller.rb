@@ -1,4 +1,4 @@
-class WishListsController < ApplicationController
+class WishListsController < BooksController
   before_action :set_wish_list, only: [:show, :edit, :update, :destroy]
 
   # GET /wish_lists
@@ -33,11 +33,16 @@ class WishListsController < ApplicationController
     if (!logged_in?)
       if (@wish_list.user != is_admin)
         if (@wish_list.user != current_user)
-          flash[:danger] = "Sorry, you are not allowed this opearation"
+          flash[:danger] = "Please Login First to access this feature"
           redirect_to root_path
         end
       end
     end
+  end
+  
+  def check_availability
+    @book = Book.all
+    @wish_list = current_user.wish_lists
   end
 
   # POST /wish_lists
@@ -46,22 +51,23 @@ class WishListsController < ApplicationController
     @wish_list = WishList.new(wish_list_params)
     @wish_list.user = current_user
     @wish_list.save
-    # if (@wish_list.save)    # If validations are successfull
-    #   flash[:success] = "Wish_list was successfully added"
-    #   redirect_to wish_list(@wish_list) ## @book is passed in because book_path (show fn) needs the id (can see in rake routes)
-    # else
-    #   render 'new'
-    # end
-    
-    respond_to do |format|
-      if @wish_list.save
-        format.html { redirect_to @wish_list, notice: 'Wish list was successfully created.' }
-        format.json { render :show, status: :created, location: @wish_list }
-      else
-        format.html { render :new }
-        format.json { render json: @wish_list.errors, status: :unprocessable_entity }
-      end
+    if (@wish_list.save)    # If validations are successfull
+      flash[:success] = "Book was successfully added"
+      redirect_to wish_list_path(@wish_list) ## @book is passed in because book_path (show fn) needs the id (can see in rake routes)
+    else
+      render 'new'
     end
+    
+#     UserMailer.welcome_email(@wish_list.user, @wish_list).deliver_now
+#     respond_to do |format|
+#       if @wish_list.save
+#         format.html { redirect_to @wish_list, notice: 'Wish list was successfully created.' }
+#         format.json { render :show, status: :created, location: @wish_list }
+#       else
+#         format.html { render :new }
+#         format.json { render json: @wish_list.errors, status: :unprocessable_entity }
+#       end
+#     end
   end
 
   # PATCH/PUT /wish_lists/1
@@ -69,7 +75,7 @@ class WishListsController < ApplicationController
   def update
     respond_to do |format|
       if @wish_list.update(wish_list_params)
-        format.html { redirect_to @wish_list, notice: 'Wish list was successfully updated.' }
+        format.html { redirect_to @wish_list, notice: 'Book Information successfully updated.' }
         format.json { render :show, status: :ok, location: @wish_list }
       else
         format.html { render :edit }
@@ -83,7 +89,7 @@ class WishListsController < ApplicationController
   def destroy
     @wish_list.destroy
     respond_to do |format|
-      format.html { redirect_to wish_lists_url, notice: 'Wish list was successfully destroyed.' }
+      format.html { redirect_to wish_lists_path, notice: 'Book successfully removed from your WishList.' }
       format.json { head :no_content }
     end
   end

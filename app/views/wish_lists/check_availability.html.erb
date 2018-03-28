@@ -1,0 +1,18 @@
+<% found = false %>
+<% @wish_list.each do |wishList| %>
+  <% @book.each do |book| %>
+    <% if (wishList.ISBN == book.ISBN) %>
+      <% found = true %>
+      <h1>
+         Your book has been found! 
+      </h1>
+    <% end %>
+  <% end %>
+<% end %>
+
+<% if (!found) %>
+  <h1>
+     Not found!
+  </h1>
+<% end %>
+
