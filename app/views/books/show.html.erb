@@ -29,8 +29,12 @@
 		<p id="match"></p>
 		<p>
 		  <center>
-      <%= link_to 'Edit Book', edit_book_path, class: "btn btn-primary btn-sm" %>
-      <%= link_to 'List All Books', books_path, class: "btn btn-primary btn-sm" %>
+				<% if @book.user == current_user %>
+      		<%= link_to 'Edit Book', edit_book_path, class: "btn btn-primary btn-sm" %>
+				<% else %>
+					<%= link_to 'Buy Book', edit_book_path, class: "btn btn-primary btn-sm" %>
+				<% end %>
+     		  <%= link_to 'List All Books', books_path, class: "btn btn-primary btn-sm" %>
 				<a href = "https://www.amazon.ca/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&field-keywords=<%=@book.ISBN%>" class= "btn btn-primary btn-sm">Search This Book on Amazon</a>
 				<a href = "https://www.bookfinder.com/search/?author=&title=&lang=en&isbn=<%=@book.ISBN%>&new_used=*&destination=ca&currency=CAD&mode=basic&st=sr&ac=qr" class= "btn btn-primary btn-sm">Compare Price for this Book</a>
       </center>

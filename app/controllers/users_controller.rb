@@ -75,6 +75,9 @@ class UsersController < ApplicationController
       end
   end
   
+  def buyNow
+  end
+  
   
   
   private
