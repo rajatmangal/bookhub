@@ -2,7 +2,7 @@ class WishList < ActiveRecord::Base
   belongs_to :user
   
   validates :ISBN, presence: true, 
-            uniqueness: true
+            :isbn_format => true
   validates :name, presence: true
   validates :price, presence: true
   
