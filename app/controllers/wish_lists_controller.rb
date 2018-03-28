@@ -1,4 +1,4 @@
-class WishListsController < ApplicationController
+class WishListsController < BooksController
   before_action :set_wish_list, only: [:show, :edit, :update, :destroy]
 
   # GET /wish_lists
@@ -39,6 +39,11 @@ class WishListsController < ApplicationController
       end
     end
   end
+  
+  def check_availability
+    @book = Book.all
+    @wish_list = current_user.wish_lists
+  end
 
   # POST /wish_lists
   # POST /wish_lists.json
@@ -53,6 +58,7 @@ class WishListsController < ApplicationController
     #   render 'new'
     # end
     
+    UserMailer.welcome_email(@wish_list.user, @wish_list).deliver_now
     respond_to do |format|
       if @wish_list.save
         format.html { redirect_to @wish_list, notice: 'Wish list was successfully created.' }

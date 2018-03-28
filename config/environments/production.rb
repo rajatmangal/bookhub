@@ -76,4 +76,19 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+    
+  ActionMailer::Base.delivery_method = :smtp  
+  config.action_mailer.perform_deliveries = true  
+  config.action_mailer.raise_delivery_errors = true  
+  config.action_mailer.default :charset => "utf-8"  
+  ActionMailer::Base.smtp_settings = {    
+        :address => "smtp.163.net",  
+        :port => 25,  
+        :domain => "163.net", 
+        :authentication => :login,   
+        :user_name => "bookhub",  
+        :password => "ijkSS21"
+        :openssl_verify_mode => 'none',
+        :ssl => true
+  }
 end
