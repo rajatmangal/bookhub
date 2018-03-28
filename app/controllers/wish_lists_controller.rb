@@ -51,11 +51,30 @@ class WishListsController < BooksController
     @wish_list = WishList.new(wish_list_params)
     @wish_list.user = current_user
     @wish_list.save
+<<<<<<< HEAD
     if (@wish_list.save)    # If validations are successfull
       flash[:success] = "Book was successfully added"
       redirect_to wish_list_path(@wish_list) ## @book is passed in because book_path (show fn) needs the id (can see in rake routes)
     else
       render 'new'
+=======
+    # if (@wish_list.save)    # If validations are successfull
+    #   flash[:success] = "Wish_list was successfully added"
+    #   redirect_to wish_list(@wish_list) ## @book is passed in because book_path (show fn) needs the id (can see in rake routes)
+    # else
+    #   render 'new'
+    # end
+    
+    UserMailer.welcome_email(@wish_list.user, @wish_list).deliver_now
+    respond_to do |format|
+      if @wish_list.save
+        format.html { redirect_to @wish_list, notice: 'Wish list was successfully created.' }
+        format.json { render :show, status: :created, location: @wish_list }
+      else
+        format.html { render :new }
+        format.json { render json: @wish_list.errors, status: :unprocessable_entity }
+      end
+>>>>>>> c9241a184790f29e5ce6a013d58600a563536d32
     end
     
 #     UserMailer.welcome_email(@wish_list.user, @wish_list).deliver_now
