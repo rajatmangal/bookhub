@@ -19,6 +19,7 @@
 							</li>
       				<li><%= link_to "Contact", contact_path %></li>
 							<li><%= link_to "Search", books_path %></li></li>
+							<li><%= link_to "Find BookStores Nearby", nearbyStores_path %></li>
       			</ul>
       			<ul class="nav navbar-nav navbar-right">
       				
@@ -41,6 +42,7 @@
 										<li role="separator" class="divider"></li>
 							<li><%= link_to "Add a new book to wishlist", new_wish_list_path %></li>
             				<li><%= link_to "Browse your Wishlist", wish_lists_path %></li>
+            				<li><%= link_to "Check Wishlist Books Availability", availability_path %></li>
             				<li role="separator" class="divider"></li>
             				<li><%= link_to "Profile", user_path(current_user) %></li>
             				<% if current_user.is_admin == "true" %>
@@ -48,6 +50,8 @@
             					<li><%= link_to "Database", users_path %></li>
             				<%end%>
             				<li role="separator" class="divider"></li>
+            					<li><%= link_to "Find BookStores Nearby", nearbyStores_path %></li>
+            				
             				<li><%= link_to "Log Out", logout_path, method: :delete %></i></a></li>
           			</ul>
         			</li>

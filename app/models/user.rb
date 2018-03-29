@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
             uniqueness: {case_sensitive: false},
             length: {maximum: 105},
             format: {with: VALID_EMAIL_REGEX}
-  validates :phone_number, format: { with: /\d{3}-\d{3}-\d{4}/, message: "bad format" }
   validates :password, presence: true,
             length: {minimum: 8}
     has_secure_password
