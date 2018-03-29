@@ -10,7 +10,7 @@ class Book < ActiveRecord::Base
   validates :name, presence: true
   validates :author, presence: true
   validates :user_id, presence: true
-  validates :price, presence: true
+  validates :price, presence: true, format: { with: /\A\d+(?:\.\d{2})?\z/ }, numericality: { greater_than: 0, less_than: 1000000 }
   validates :availability, presence: true
   
   def self.search(search)
