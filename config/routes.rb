@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/about', to: 'welcome#about'
   get '/contact', to: 'welcome#contact'
   
-  get '/contactSeller', to: 'users#buyNow'
+  get '/books/buy_book/:id', to: 'books#buyNow'
   
   get '/signup', to: 'users#new'
   

@@ -1,0 +1,23 @@
+<%= render 'layouts/navigation' %>
+<br>
+<br>
+<br>
+<div class="container">
+<div class="panel panel-default">
+  <div class="panel-heading"><center>Buyer Information: -</center></div>
+  <div class="panel-body">
+    <center>
+      <h4>
+         You can email user at: -  <%= @book.user.email %>
+      </h4>
+      <% if(@book.user.first_name != nil) %>
+      <h4>
+        Or<br>
+         You can text user at  - <%= @book.user.first_name %>
+      </h4>
+      *User prefers text communication to calls
+    <% end %>
+    </center>
+  </div>
+</div>
+ </div>

@@ -54,6 +54,10 @@ class BooksController < ApplicationController
     
   end
   
+  def buyNow
+    @book = Book.find(params[:id])
+  end
+  
   def show
     @book = Book.find(params[:id])
   end
