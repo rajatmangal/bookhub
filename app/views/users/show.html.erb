@@ -21,6 +21,9 @@
       Last name: - <%= @user.last_name %> <br>
       Username: - <%= @user.username %> <br>
       Email: - <%= @user.email %> <br>
+			<% if @user.phone_number != nil %>
+				Phone No. : - <%= @user.phone_number %><br>
+			<% end %>
       </center>
     </div>
 </div>
