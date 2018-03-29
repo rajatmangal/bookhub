@@ -3,7 +3,7 @@
 	<head>
 		<meta charset = "utf-8">
 		<meta name = "viewport" content = "intitial-scale=1.0, user-scalable=no">
-		<script type = "text/javascript" src = "https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCf4HlmaWmWAutFZxrb3lV1IQzMNdPXNDQ">
+		<script type = "text/javascript" src = "https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCd0nJ2RiEAqHV5dhgYuhPQMnCjQ8WZGVg">
 		</script>
 		
 		<script>
@@ -41,6 +41,7 @@
 				};
 				service.nearbySearch(request, callback);
 			});
+			
 			var request = {
 			  placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
 			};
@@ -87,20 +88,19 @@
 		</script>
 		
 		<style>
-			#map {
+			html, body, #map {
 				height: 100%;
 				margin: 0px;
 				padding: 0px;
 			}
-		
 		</style>
 	
 	</head>
 	
 	<body>
 		<%= render 'layouts/navigation' %>
-			<div id = "map">
-			</div>
+		<div id = "map">
+		</div>
 	
 	</body>
 
