@@ -7,13 +7,12 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   
   root 'welcome#home'
-  get '/about', to: 'welcome#about'
   get '/contact', to: 'welcome#contact'
   
   get '/contactSeller', to: 'users#buyNow'
   
   get '/signup', to: 'users#new'
-  
+  get '/nearbyStores', to: 'welcome#nearbyStores'
   resources :users, except: [:new]
   
   get '/login', to: 'sessions#new'
