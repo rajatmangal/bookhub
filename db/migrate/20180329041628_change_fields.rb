@@ -1,5 +1,5 @@
 class ChangeFields < ActiveRecord::Migration
   def change
-    change_column :books, :price, :number_field
+    change_column :books, :price, :string
   end
 end

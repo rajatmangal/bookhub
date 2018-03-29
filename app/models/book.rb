@@ -10,7 +10,7 @@ class Book < ActiveRecord::Base
   validates :name, presence: true
   validates :author, presence: true
   validates :user_id, presence: true
-  validates :price, presence: true, numericality: { greater_than: 0, less_than: 1000000 }
+  validates :price, presence: true
   validates :availability, presence: true
   
   def self.search(search)
