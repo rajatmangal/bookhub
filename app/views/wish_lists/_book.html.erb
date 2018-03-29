@@ -9,7 +9,6 @@
         <center>
 	        Title: - <%= element[:name] %> <br>
           ISBN Number: - <%= element[:ISBN] %> <br>
-					Price: - $<%= element[:price] %>
 					<br>
           <% if logged_in? %>
             <% if (element.user == current_user || current_user.is_admin == "true") %>

@@ -4,7 +4,6 @@ class WishList < ActiveRecord::Base
   validates :ISBN, presence: true, 
             :isbn_format => true
   validates :name, presence: true
-  validates :price, presence: true
   
   
 end

@@ -57,6 +57,10 @@ class WishListsController < BooksController
       redirect_to wish_list_path(@wish_list) ## @book is passed in because book_path (show fn) needs the id (can see in rake routes)
     else
       render 'new'
+<<<<<<< HEAD
+=======
+    end
+>>>>>>> 44481d0ca07b5d29ec5a2b721aead0a94767deac
 
     # if (@wish_list.save)    # If validations are successfull
     #   flash[:success] = "Wish_list was successfully added"
@@ -65,6 +69,7 @@ class WishListsController < BooksController
     #   render 'new'
     # end
     
+<<<<<<< HEAD
 #     UserMailer.welcome_email(@wish_list.user, @wish_list).deliver_now
 #     respond_to do |format|
 #       if @wish_list.save
@@ -76,6 +81,19 @@ class WishListsController < BooksController
 #       end
 
     end
+=======
+    # UserMailer.welcome_email(@wish_list.user, @wish_list).deliver_now
+    # respond_to do |format|
+    #   if @wish_list.save
+    #     format.html { redirect_to @wish_list, notice: 'Wish list was successfully created.' }
+    #     format.json { render :show, status: :created, location: @wish_list }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @wish_list.errors, status: :unprocessable_entity }
+    #   end
+
+    # end
+>>>>>>> 44481d0ca07b5d29ec5a2b721aead0a94767deac
     
 #     UserMailer.welcome_email(@wish_list.user, @wish_list).deliver_now
 #     respond_to do |format|
@@ -121,6 +139,6 @@ class WishListsController < BooksController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wish_list_params
-      params.require(:wish_list).permit(:name, :ISBN, :price)
+      params.require(:wish_list).permit(:name, :ISBN)
     end
 end
