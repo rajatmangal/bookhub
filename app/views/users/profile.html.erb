@@ -4,7 +4,7 @@
 </h3>
 <div align="center">
 	<% if current_user.image_file_name != nil%>
-		<%= image_tag current_user.image.url(:large),class:"img-circle img1"%><br>
+		<%= image_tag current_user.image.url(:large),class:"img-circle image1"%><br>
 	<%else%>
 		<%= image_tag "profile.jpg",class:"img-circle image1" %><br>
 	<%end%>
