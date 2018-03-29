@@ -14,7 +14,7 @@
           ISBN Number: - <%= book.ISBN %> <br>
 					<br>
           <%= link_to "Show Book", wish_list_path(book), class: "btn btn-primary btn-sm"%>
-           <%= link_to "Back", wish_lists_path, class: "btn btn-primary btn-sm"%>
+       
         </center>
 			</div>
     </div>
@@ -27,7 +27,8 @@
   <h2>
      Sorry There are no books available from your WishList.
   </h2>
-  <%= link_to "Back", wish_lists_path, class: "btn btn-primary btn-sm"%>
+  
   </center>
 <% end %>
+<center><%= link_to "Back", wish_lists_path, class: "btn btn-primary btn-sm"%></center>
 
