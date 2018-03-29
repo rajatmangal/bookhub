@@ -4,7 +4,7 @@
 		<h3>
 			There are no books to Display
 		</h3><br>
-		<%= link_to "Add Books", new_book_path, class: "btn btn-primary btn-sm"%>
+		
 	</center>
 	<% end %>
   <% obj.each { |element| %>
@@ -38,3 +38,4 @@
     </div>
   <% } %>
 </div>
+<center><%= link_to "Add Books", new_book_path, class: "btn btn-primary btn-sm"%></center>
